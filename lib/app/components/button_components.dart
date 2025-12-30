@@ -1,24 +1,26 @@
-import 'package:commerce/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class ButtonComponents extends StatelessWidget {
+  final String txtButton; // libellé du bouton
+  final Color buttonColor; // couleur passée par l'appelant
 
-  String txtButton;//ici on a creer un attribut de type string
-
-  ButtonComponents(
-    {super.key, required this.txtButton, required Color buttonColor}//ici on a creer un constructeur
-    );
+  const ButtonComponents({super.key, required this.txtButton, required this.buttonColor});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      width: MediaQuery.of(context).size.width,//mediaquery permet de recuperer la taille de l'ecran de l'utilisateur
+      width: MediaQuery.of(context).size.width, // largeur adaptative
       decoration: BoxDecoration(
-        color: mainColor,
+        color: buttonColor,
         borderRadius: BorderRadius.circular(7),
-      ),child: Center(child: Text(txtButton,style: TextStyle(color: Colors.white,fontSize: 16),)),
+      ),
+      child: Center(
+        child: Text(
+          txtButton,
+          style: const TextStyle(color: Colors.white, fontSize: 16),
+        ),
+      ),
     );
   }
 }

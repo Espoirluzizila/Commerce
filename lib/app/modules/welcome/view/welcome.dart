@@ -51,7 +51,7 @@ class _WelcomeState extends State<Welcome> {
               h(80),
               InkWell(
                 onTap: () {
-                  // Navigation vers Home ou Auth
+                  Navigator.pushReplacementNamed(context, '/catalog');
                 },
                 child: ButtonComponents(
                   txtButton: "Get Started",

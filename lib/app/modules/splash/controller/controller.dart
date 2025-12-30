@@ -3,8 +3,5 @@ import 'package:commerce/app/modules/home/view/home.dart';
 
 Future<void> time(BuildContext context) async {//on cree une fonction
   await Future.delayed(const Duration(seconds: 3));//on cree une attente
-  Navigator.pushReplacement(//on cree une navigation
-    context,
-    MaterialPageRoute(builder: (context) => const Home()),//on dirige vers la page home
-  );
+  Navigator.pushReplacementNamed(context, '/welcome');
 }
